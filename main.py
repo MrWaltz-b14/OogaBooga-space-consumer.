@@ -71,7 +71,7 @@ def file_creation(il, code):
 
 def file_run(i):
     number = i
-    with open(f"Oogabooga{i}.py", 'w') as running:
+    with open(f"Oogabooga{i}.py", 'r') as running:
         exec(running.read())
 
 
