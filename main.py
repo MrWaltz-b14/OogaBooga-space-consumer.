@@ -68,7 +68,7 @@ def file_run(i, open2):
     number = i
     number += 1
     open2 = outside_ooga
-    open2 = open(f"Oogabooga{number}.py", 'r')
+    open2 = open(f"Oogabooga{number}.py")
     exec(open2.read())
 
 
