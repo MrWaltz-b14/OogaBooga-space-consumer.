@@ -1,6 +1,6 @@
 """
 Produced by Mr. Waltz
-date: March 21: RAMADAN SOON Boiss!!!
+date: March 21: RAMADAN SOON Boiss!!! Updated june 11 2023
 Disclaimer: dont be a bad boy/girl with this script please. not that its very effective in the first place
 I literally only made this to shame malek for his horrible "Ooga Booga" virus.
 """
